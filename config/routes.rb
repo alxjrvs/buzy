@@ -1,11 +1,15 @@
 Buzy::Application.routes.draw do
   resources :users
   resources :places
+  resources :votes
+
 
   get "places/new"
+  get "votes/new"
   get "users/new"
   get "static_pages/home"
 
+  
 
 
   # The priority is based upon order of creation: first created -> highest priority.
