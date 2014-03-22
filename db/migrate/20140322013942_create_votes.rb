@@ -1,7 +1,7 @@
 class CreateVotes < ActiveRecord::Migration
   def change
     create_table :votes do |t|
-      t.int :score
+      t.integer :score
 
       t.timestamps
     end
