@@ -1,4 +1,4 @@
 <h1>All the places:</h1>
 <% @places.each do |place| %>
-	<li><%= place.name %></li>
+	<li><a href="\places/<%= place.id %>"><%= place.name %></a></li>
 <% end %>
