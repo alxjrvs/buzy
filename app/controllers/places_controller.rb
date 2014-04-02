@@ -3,15 +3,10 @@ class PlacesController < ApplicationController
   before_action :signed_in_user, only: [:new]
 
   def busyness_color(score)
-    case score
-      when 0..33
-        @color = '#66CC00'
-      when 34..66
-        @color = '#FF9933'
-      else
-        @color = '#FF0000'
-    end
-    @color
+    s = score/100.00 #score as a percent
+    red = (s*255).ceil.to_s(16) #hex string of rgb value
+    green = ((1-s)*255).ceil.to_s(16)
+    color = "##{red}#{green}00"
   end
 
   def votes_to_count(time_ago)
@@ -51,7 +46,6 @@ class PlacesController < ApplicationController
       @score = score(votes)==0 ? 50 : score(votes)
       @color = busyness_color(@score)
       @graphable  = graphable_votes(votes)
-      @username = current_user.name
     end
   end
 
