@@ -1,6 +1,27 @@
 // Place all the styles related to the Places controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
- body {
- background-color:#000;
+
+#places-list {
+	margin: 20px;
+	width: 50%;
+	margin: 0 auto;
+}
+
+#places-list .place {
+	float: left;
+	margin: 10px;
+	background-color: blue;
+	padding: 20px;
+}
+
+#places-list a, #places-list a:visited, #places-list a:hover {
+	color: white;
+}
+
+.rounded {
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px; /* future proofing */
+	-khtml-border-radius: 10px; /* for old Konqueror browsers */
 }

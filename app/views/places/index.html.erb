@@ -1,21 +1,13 @@
-<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+<% provide(:title, 'Add a Location') %>
 <h1>The Locations:</h1>
 
+<div id="places-list">
 <% @places.each do |place| %>
-	<div class="panel" id="companies">
-		<div class="content">
-			<h4 class="companies-title"></h4>
-			<a href="\places/<%= place.id %>/60">
-			<div class="company-wrapper-outer">
-					<div class="company-wrapper-inner">
-						<%= place.name%>
-					</div>
-			</div>
-			</a>
-		</div>
+	<a href="\places/<%= place.id %>/60">
+	<div class="rounded place">
+		<%= place.name%>
 	</div>
+	</a>
 <% end %>
-
-<div class="center hero-unit">
-	<%= link_to "add a place", '/places/new', class: "btn btn-large btn-primary" %> 
 </div>
+
